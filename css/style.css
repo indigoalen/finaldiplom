@@ -6,7 +6,7 @@ body{
   padding: 0;
   overflow-x: hidden;
 }
-header{
+.start{
   background:linear-gradient(to top, #000, #5b1212); 
 }
 .container,
@@ -36,16 +36,24 @@ header{
   justify-content: center;
   width: 30%;  
  }
-h1{
+.logo-name{
+  padding-left: 1vw;
+}
+.logo:hover{
+  cursor: pointer;
+}
+.logo-text{
+  display: block;
   font-weight: 400;
-  font-size: 24px; 
-  margin-left: 3%;
+  font-size: 24px;   
+  /*margin-left: 3%;*/  
 }
-h1 span{
-  font-size: 1.3rem; 
-  font-weight: 100;   
+.text-logo{
+  display: block;
+  font-size: 1.1rem; 
+  font-weight: 100;  
 }
-nav{
+.name-menu{
   width: 85%;
   display: flex; 
   justify-content: space-around;
@@ -76,7 +84,6 @@ nav{
 .menu-link:hover,
 .profile-link:hover{ 
   cursor: pointer;
-  padding: .2em;
   background-color: rgba(16, 3, 3, .5);
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;  
@@ -84,7 +91,7 @@ nav{
 
 .profile{
   display: flex;
-  align-self: center;
+  align-items: center;
   flex-wrap: nowrap;
   font-size: 1.2rem; 
   cursor: pointer;
@@ -103,7 +110,7 @@ nav{
   background-size: cover;
   background-position: 50% 50%;
   width: 100%;
-  height: 100vh; 
+  height: 90vh; 
   justify-content: center;  
 }
 .titles{   
@@ -154,11 +161,23 @@ nav{
   width: 450px; 
   height: 350px;
   margin: 2% 2%;  
+  position: relative;
 }
 .cell-unit,
 .wrapper-cell-unit{
  box-sizing: border-box;
  width: 100%;  
+}
+.cell-unit:hover{
+  cursor: pointer;
+  position: absolute;
+  top: -5%;
+  left: -5%;  
+  width: 110%;
+  height: 110%;
+  border: .3em solid #5b1212;
+  border-radius: .3em;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 1);
 }
 .presentation{
   flex-direction: column;    
@@ -176,14 +195,16 @@ nav{
   /*margin: -0.2% -2%;*/
 }
 .presentation-text{   
-   padding-bottom: 10%;
+   margin-bottom: 10%;
    display: flex;
    justify-content: center;
    align-items: center;  
    font-family: 'Montserrat Alternates', sans-serif;
    font-weight: 400;
  }
-h2{
+.hello-headline,
+.presentation-headline,
+#music{
   display: block;
   text-align: center;
   margin-bottom: 0;
@@ -254,7 +275,7 @@ h2{
 .musiс-wrapper-cell-unit{
   width: 100%;
 }
-h3{
+.music-caption{
   margin-top: 0;
 }
 .contact{
@@ -280,8 +301,21 @@ h3{
  font-weight: 300;
  margin-left: 68px;
 }
-.contact-text p{
+.contact-txt{
+  box-sizing: border-box;
+  list-style-type: none;
+  color: #ffffff; 
+  padding: 0; 
+}
+.txt-contact{
+  box-sizing: border-box;  
+  text-decoration: none;  
+  color: #ffffff;
   margin-top: 0;
+}
+.allotment{
+  font-weight: bold;
+
 }
 .contact-links{
   display: flex;
@@ -308,7 +342,12 @@ h3{
   content: url(../img/email-min.png);
 }
 .links-wrapper{
-  padding: 0;
+  padding: 0;  
+}
+.icon:hover{  
+  cursor: pointer; 
+  border-radius: 50%;  
+  box-shadow: 0 0 15px rgba(0, 0, 0, 1); 
 }
 #map-wrapper{
    margin: 0 auto;
@@ -335,6 +374,9 @@ h3{
 @media (min-width: 300px) and (max-width: 420px) {
   .container{
     align-items: center;
+  }  
+  .profile-link{
+    height: 48px;
   }
    .cap{
     background: url(../img/pab720-min.jpg) no-repeat;
@@ -351,6 +393,15 @@ h3{
   .musiс-wrapper-text{
     height: auto;
   }
+  .cell-unit:hover{ 
+  width: 100%;
+  height: 100%;
+  position: relative;
+  left: 0; 
+  border: .3em solid #5b1212;
+  border-radius: .3em;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+}
   #music::after,
   #music::before{
     display: none;
@@ -394,6 +445,15 @@ h3{
   .musiс-wrapper-text{
     height: auto;
   } 
+  .cell-unit:hover{ 
+  width: 100%;
+  height: 100%;
+  position: relative;
+  left: 0; 
+  border: .3em solid #5b1212;
+  border-radius: .3em;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+  }
   .contact-conteiner{
     position: relative;
     flex-direction: column;    
@@ -414,12 +474,12 @@ h3{
     width: 90%;
   }
 }
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 768px) and (max-width: 1023px){
   .container{
     align-items: center;
   }
   .cap{
-     height: 90vh;    
+     height: 85vh;    
   }  
   .titles-text{    
     font-size: 2rem;
@@ -430,13 +490,22 @@ h3{
   .musiс-wrapper-text{
     height: auto;
   } 
+  .cell-unit:hover{ 
+  width: 100%;
+  height: 100%;
+  position: relative;
+  left: 0; 
+  border: .3em solid #5b1212;
+  border-radius: .3em;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+  }
    .contact-conteiner{ 
    flex-direction: row;
    align-items: flex-start;
    justify-content: center;
    padding: 5%;
   }
-   .contact-text{
+  .contact-text{
    width: 30%;
    margin: 0 auto;
    line-height: 1.5rem;   
@@ -469,8 +538,8 @@ h3{
   .name{
     width: 100%;    
   } 
-  h1,
-  h1 span{
+  .logo-text,
+  .text-logo{
     font-size: 1rem;
     margin-right: auto;
   }
@@ -504,11 +573,11 @@ h3{
   .name{
     width: 30%;    
   }  
-  h1,
-  h1 span{
+  .logo-text,
+  .text-logo{
     font-size: 1em;
   }
-  nav{
+  .name-menu{
     width: 90%;
   }
   .menu-link{
@@ -545,7 +614,7 @@ h3{
    justify-content: space-around;
    padding: 5%;
   }
-   .contact-text{
+  .contact-text{
    width: 30%;
    margin: 0 auto;
    line-height: 1.5rem;
@@ -576,6 +645,9 @@ h3{
    align-items: center;
    justify-content: center; 
  }
+ .titles-text{    
+    font-size: 2rem;
+  } 
   .wrapper-cell-unit{
     height: 330px;
   }
